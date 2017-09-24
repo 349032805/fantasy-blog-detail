@@ -1,0 +1,47 @@
+  <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+<div class="leaveMessage">
+
+  <div class="content">
+    <div class="write-block">
+      <textarea class="form-control" rows="5" maxlength="500" 
+      placeholder="欢迎给我留言,也可以加我QQ或者微信联系.QQ 349032805 微信:fanjun1231" [(ngModel)]="message.content">
+    </textarea>
+      <div class="submit">
+         <button class="btn btn-info pull-right" (click)="handleSubmit()">提 交</button>
+      </div>
+    </div>
+
+    <!-- 显示留言和博主回复 -->
+    <div class="show-block">
+        <!-- <div class="one-dialog">
+          <div class="ask clearfix">
+            <p class="ask-content">你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</p>
+            <p class="ask-time">2017-10-11 11:12:12</p>
+          </div>
+           <div class="response clearfix">
+            <p class="response-content"> fantasy回复: 我很好</p>
+            <p class="response-time">2017-10-13 11:17:12</p>
+          </div>
+        </div> -->
+
+        <div class="one-dialog" *ngFor="let message of messageList">
+          <div class="ask clearfix">
+            <p class="ask-content">{{message.content}}</p>
+            <p class="ask-time">{{message.createTime | date:'yyyy-MM-dd hh:mm'}}</p>
+          </div>
+           <div class="response clearfix" *ngIf="message.response">
+            <p class="response-content"> fantasy回复: {{message.response}}</p>
+            <p class="response-time">{{message.responseTime | date:'yyyy-MM-dd hh:mm'}}</p>
+          </div>
+        </div>
+ 
+    </div>
+
+  </div>
+
+  <div class="music">
+     <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28409805&auto=1&height=66"></iframe>  -->
+     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=410042522&auto=1&height=66"></iframe> 
+  </div>
+
+</div>

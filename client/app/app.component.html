@@ -1,0 +1,38 @@
+<div class="layout">
+    <!-- http://www.yeahzan.com/fa/facss.html -->
+    <router-outlet></router-outlet>
+</div>
+
+<div class="go" *ngIf="child=='blogDetail'">
+    <div class="go-item" (click)="goHome()">
+        <i class="fa fa-home"></i>
+        <p>回到</p>
+        <p>首页</p>
+    </div>
+</div>
+
+<div class="go" *ngIf="child=='leaveMessage'">
+    <div class="go-item" (click)="gotoAboutMe()">
+        <i class="fa fa-child"></i>
+        <p>关于</p>
+        <p>我</p>
+    </div>
+    <div class="go-item" style="border-top:1px solid #d9d9d9" (click)="goHome()">
+        <i class="fa fa-home"></i>
+        <p>回到</p>
+        <p>首页</p>
+    </div>
+</div>
+
+<div class="go" *ngIf="child=='aboutMe'">
+    <div class="go-item" (click)="gotoLeaveMessage()">
+        <i class="fa fa-edit"></i>
+        <p>给我</p>
+        <p>留言</p>
+    </div>
+    <div class="go-item" style="border-top:1px solid #d9d9d9" (click)="goHome()">
+        <i class="fa fa-home"></i>
+        <p>回到</p>
+        <p>首页</p>
+    </div>
+</div>

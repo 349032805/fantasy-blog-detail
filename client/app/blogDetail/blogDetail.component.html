@@ -1,0 +1,18 @@
+<div class="blogDetail">
+  <div class="content">
+    <p class="title">{{article.title}}
+      <p>
+        <!-- 创建时间和浏览次数 -->
+        <div class="time-scan">
+          <span>{{article.updateTime | date:'yyyy-MM-dd hh:mm'}}</span>&nbsp;&nbsp;
+          <span>分类: {{article.belong | translate}}</span>&nbsp;&nbsp;
+          <span><img src="../../assets/browse2.png" class="browse"> {{article.scanNum}}</span>
+        </div>
+        <p class="blog-content" [innerHTML]="article.content"></p>
+        <div class="comment" *ngIf="article.evaluate">
+          <p>fantasy评论:</p>
+          <p class="comment-content">{{article.evaluate}}</p>
+        </div>
+  </div>
+
+</div>
